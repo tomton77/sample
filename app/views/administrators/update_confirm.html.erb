@@ -1,0 +1,17 @@
+<h1>Administrators#update_confirm</h1>
+<p>Find me in app/views/administrators/update_confirm.html.erb</p>
+
+<ul>
+  <li>ID: <span><%= @administrator&.id %></span></li>
+  <li>メールアドレス: <span><%= @administrator&.email %></span></li>
+  <li>パスワード: <span><%= @administrator&.password %></span></li>
+</ul>
+
+<%= form_for(@administrator, :html => {:class => "field", :multipart => true}, method: :post, url: administrators_update_complete_path) do |f| %>
+    <%= f.submit '保存する' %>
+    <%= link_to '戻る', administrators_update_path %>
+    <%= f.hidden_field :id, :value => @administrator.id %>
+    <%= f.hidden_field :email, :value => @administrator.email %>
+    <%= f.hidden_field :password, :value => @administrator.password %>
+    <%= f.hidden_field :password_confirmation, :value => @administrator.password_confirmation %>
+<% end %>

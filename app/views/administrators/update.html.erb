@@ -1,0 +1,21 @@
+<h1>Administrators#update</h1>
+<p>Find me in app/views/administrators/update.html.erb</p>
+
+<% if @administrator.errors.any? %>
+   <p>エラーです。</p>
+   <% @administrator.errors.full_messages.each do |msg| %>
+     <p><%= msg %></p>
+   <% end %>
+<% end %>
+
+<%= form_for(@administrator, :html => {:class => "field", :multipart => true}, url: administrators_update_confirm_path(@administrator.id) ) do |f| %>
+  <ul>
+    <li>ID: <span><%= f.label @administrator.id %></span><%= f.hidden_field :id, :value => @administrator.id %></li>
+    <li>メールアドレス: <%= f.text_field :email, class: "email" %></li>
+    <li>パスワード: <%= f.text_field :password, class: "pass" %></li>
+    <li>パスワード(確認): <%= f.text_field :password_confirmation, class: "pass" %></li>
+  </ul>
+  <%= f.submit '確認' %>
+  <%= link_to '戻る', administrators_index_path %>
+<% end %>
+  

@@ -1,0 +1,13 @@
+<h1>Administrators#new</h1>
+<p>Find me in app/views/administrators/new.html.erb</p>
+
+<%= form_for(@administrator, :html => {:class => "field", :multipart => true}, url: administrators_new_confirm_path) do |f| %>
+<ul>
+  <li><%= f.label 'ID' %></li>
+  <li>ID: <span>自動採番</span></li>
+  <li>メールアドレス: <%= f.text_field :email, class: "email" %></li>
+  <li>パスワード: <%= f.text_field :password, class: "pass" %></li>
+  <li>パスワード(確認): <%= f.text_field :password_confirmation, class: "pass" %></li>
+</ul>
+<%= f.submit '確認' %>
+<% end %>
