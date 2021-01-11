@@ -1,0 +1,20 @@
+<h1>SkillSheets#update</h1>
+<p>Find me in app/views/skill_sheets/update.html.erb</p>
+
+<%= form_for(@skill_sheet, :html => {:class => "field", :multipart => true}, url: skill_sheets_create_path) do |f| %>
+  <ul>
+    <li>技術者名: <%= f.hidden_field :user_id, class: "user_id" %><%= f.text_field :user_name, class: "user_name" %></li>
+    <li>年齢: <%= f.text_field :age, class: "age" %></li>
+    <li>性別: <%= f.select :sex, {'男性': 1, '女性': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %></li>
+    <li>資格: <%= f.text_field :qualification, class: "qualification" %></li>
+    <li>学歴: <%= f.text_field :academic_history, class: "academic_history" %></li>
+    <li>稼働: <%= f.text_field :earnings, class: "earnings" %></li>
+    <li>最寄駅: <%= f.text_field :nearest_station, class: "nearest_station" %></li>
+    <li>所属: <%= f.text_field :affiliation, class: "affiliation" %></li>
+    <li>得意分野: <%= f.text_field :specialty, class: "specialty" %></li>
+    <li>得意技術: <%= f.text_field :specialty_technology, class: "specialty_technology" %></li>
+    <li>得意業務: <%= f.text_field :good_business, class: "good_business" %></li>
+    <li>自己PR: <%= f.text_field :self_pr, class: "self_pr" %></li>
+  </ul>
+  <%= f.submit '登録' %>
+<% end %>

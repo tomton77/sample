@@ -1,0 +1,13 @@
+<% @skill_sheets&.each do |skill_sheet| %>
+    <tr>
+      <td><%= skill_sheet.id %></td>
+      <td><%= skill_sheet.user_name %></td>
+      <td><%= skill_sheet.age %></td>
+      <td><%= skill_sheet.affiliation %></td>
+      <td><%= skill_sheet.sex %></td>
+      <td><%= link_to '詳細', skill_sheets_detail_path(skill_sheet.id) %></td>
+      <td><%= link_to '更新', skill_sheets_edit_path(skill_sheet.id) %></td>
+      <td><%= link_to '削除', skill_sheets_delete_path(skill_sheet.id), data: { confirm: '削除しますか？' } %></td>
+    </tr>
+<% end %>
+  

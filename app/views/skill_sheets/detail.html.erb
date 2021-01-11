@@ -1,0 +1,19 @@
+<h1>SkillSheets#detail</h1>
+<p>Find me in app/views/skill_sheets/detail.html.erb</p>
+
+<ul>
+  <li>技術者名: <%= @skill_sheet.user_id %> <%= @skill_sheet.user_name %></li>
+  <li>年齢: <%= @skill_sheet.display_age %></li>
+  <li>性別: <%= @skill_sheet.display_sex %></li>
+  <li>資格: <%= @skill_sheet.qualification %></li>
+  <li>学歴: <%= @skill_sheet.academic_history %></li>
+  <li>稼働: <%= @skill_sheet.earnings %></li>
+  <li>最寄駅: <%= @skill_sheet.nearest_station %></li>
+  <li>所属: <%= @skill_sheet.affiliation %></li>
+  <li>得意分野: <%= @skill_sheet.specialty %></li>
+  <li>得意技術: <%= @skill_sheet.specialty_technology %></li>
+  <li>得意業務: <%= @skill_sheet.good_business %></li>
+  <li>自己PR: <%= @skill_sheet.self_pr %></li>
+</ul>
+
+<%= link_to '編集', skill_sheets_edit_path(@skill_sheet.id) %>

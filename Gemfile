@@ -71,3 +71,7 @@ gem 'devise'
 gem 'bcrypt', '~> 3.1.16'
 # エラーメッセージ日本語化
 gem 'rails-i18n'
+# pagenate
+gem 'kaminari'
+# jquery
+gem "jquery-rails"
